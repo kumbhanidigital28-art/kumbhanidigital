@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" width="220" height="44" role="img" aria-label="Kumbhani Digital Logo">
+  <defs>
+    <!-- Primary gradient: Violet → Cyan -->
+    <linearGradient id="kd-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C63FF"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+
+    <!-- Glow filter for icon -->
+    <filter id="kd-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ══════════════════════════════
+       ICON MARK — Hexagonal badge
+       with stylised "K" + dot node
+  ═══════════════════════════════════ -->
+  <!-- Hexagon background shape -->
+  <polygon
+    points="22,2 38,11 38,33 22,42 6,33 6,11"
+    fill="url(#kd-grad-main)"
+    filter="url(#kd-glow)"
+  />
+
+  <!-- Inner hexagon outline (subtle depth) -->
+  <polygon
+    points="22,6 34,13 34,31 22,38 10,31 10,13"
+    fill="none"
+    stroke="rgba(255,255,255,0.2)"
+    stroke-width="0.8"
+  />
+
+  <!-- Letter K — left vertical bar -->
+  <rect x="14" y="14" width="3" height="16" rx="1" fill="white"/>
+
+  <!-- Letter K — upper diagonal arm -->
+  <polygon points="17,22 26,14 29,14 20,22" fill="white"/>
+
+  <!-- Letter K — lower diagonal arm -->
+  <polygon points="17,22 29,30 26,30 17,24" fill="white"/>
+
+  <!-- Accent dot (node indicator — digital feel) -->
+  <circle cx="30" cy="30" r="2.2" fill="#00D4FF" opacity="0.95"/>
+
+  <!-- ══════════════════════════════
+       WORDMARK
+  ═══════════════════════════════════ -->
+  <!-- "Kumbhani" — bold, white -->
+  <text
+    x="48"
+    y="26"
+    font-family="'Poppins', 'Segoe UI', sans-serif"
+    font-size="15"
+    font-weight="700"
+    letter-spacing="0.3"
+    fill="#F0F0FF"
+  >Kumbhani</text>
+
+  <!-- "Digital" — medium weight, gradient fill -->
+  <text
+    x="48"
+    y="39"
+    font-family="'Poppins', 'Segoe UI', sans-serif"
+    font-size="10.5"
+    font-weight="500"
+    letter-spacing="2.8"
+    fill="url(#kd-grad-main)"
+  >DIGITAL</text>
+
+  <!-- Subtle separator line between wordmark lines -->
+  <line x1="48" y1="29.5" x2="212" y2="29.5" stroke="rgba(108,99,255,0.25)" stroke-width="0.5"/>
+</svg>

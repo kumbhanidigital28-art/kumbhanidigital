@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════════════════════
+   KUMBHANI DIGITAL — SERVICES PAGE STYLES
+   css/pages/services.css
+════════════════════════════════════════════════════════ */
+
+/* ─── Service Detail Sections ───────────────────────── */
+.service-detail {
+  padding-block: var(--space-24);
+  background: var(--color-bg);
+}
+
+.service-detail--alt {
+  background: var(--color-bg-alt);
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.service-detail-grid--reverse {
+  direction: rtl;
+}
+.service-detail-grid--reverse > * {
+  direction: ltr;
+}
+
+/* ─── Service Number ────────────────────────────────── */
+.service-number {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── Service Detail Title ──────────────────────────── */
+.service-detail-title {
+  font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
+  font-weight: var(--fw-extrabold);
+  line-height: 1.2;
+  margin-bottom: var(--space-5);
+  color: var(--color-text-primary);
+}
+
+/* ─── Service Description ───────────────────────────── */
+.service-detail-desc {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-6);
+}
+
+/* ─── Benefit List ──────────────────────────────────── */
+.benefit-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.benefit-list li {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  line-height: 1.6;
+}
+
+/* ─── Large Service Icon ────────────────────────────── */
+.service-detail-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon-large {
+  font-size: clamp(6rem, 12vw, 10rem);
+  line-height: 1;
+  filter: drop-shadow(0 0 40px rgba(108, 99, 255, 0.3));
+  animation: float 5s ease-in-out infinite;
+  text-align: center;
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Responsive ────────────────────────────────────── */
+@media (max-width: 900px) {
+  .service-detail-grid,
+  .service-detail-grid--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  .service-detail-visual {
+    order: -1;
+  }
+  .service-icon-large {
+    font-size: 5rem;
+    padding: var(--space-8);
+  }
+}

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" width="220" height="44" role="img" aria-label="Kumbhani Digital Logo">
+  <defs>
+    <linearGradient id="kd-grad-white" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C63FF"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+    <filter id="kd-glow-w" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hexagon icon — same as main logo -->
+  <polygon
+    points="22,2 38,11 38,33 22,42 6,33 6,11"
+    fill="url(#kd-grad-white)"
+    filter="url(#kd-glow-w)"
+  />
+  <polygon
+    points="22,6 34,13 34,31 22,38 10,31 10,13"
+    fill="none"
+    stroke="rgba(255,255,255,0.25)"
+    stroke-width="0.8"
+  />
+
+  <!-- K letter -->
+  <rect x="14" y="14" width="3" height="16" rx="1" fill="white"/>
+  <polygon points="17,22 26,14 29,14 20,22" fill="white"/>
+  <polygon points="17,22 29,30 26,30 17,24" fill="white"/>
+  <circle cx="30" cy="30" r="2.2" fill="#00D4FF" opacity="0.95"/>
+
+  <!-- Wordmark — all white for light/colored backgrounds -->
+  <text
+    x="48"
+    y="26"
+    font-family="'Poppins', 'Segoe UI', sans-serif"
+    font-size="15"
+    font-weight="700"
+    letter-spacing="0.3"
+    fill="#FFFFFF"
+  >Kumbhani</text>
+
+  <text
+    x="48"
+    y="39"
+    font-family="'Poppins', 'Segoe UI', sans-serif"
+    font-size="10.5"
+    font-weight="500"
+    letter-spacing="2.8"
+    fill="rgba(255,255,255,0.75)"
+  >DIGITAL</text>
+
+  <line x1="48" y1="29.5" x2="212" y2="29.5" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+</svg>

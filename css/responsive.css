@@ -1,0 +1,549 @@
+/*
+ * ════════════════════════════════════════════════════════════════
+ *  responsive.css — Kumbhani Digital
+ *  Global responsive fixes for all Bootstrap 5 pages
+ *  Breakpoints:  xs < 576px | sm 576–767px | md 768–991px | lg 992+
+ * ════════════════════════════════════════════════════════════════
+ */
+
+/* ──────────────────────────────────────────────────────────────
+   0. GLOBAL RESET / OVERFLOW GUARD
+────────────────────────────────────────────────────────────── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent any element from overflowing its parent */
+.container,
+.container-fluid {
+  overflow-x: hidden;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   1. TYPOGRAPHY — Fluid Scaling
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  body { font-size: 0.9rem; }
+
+  h1, .hero-title, .pp-title  { font-size: clamp(1.6rem, 8vw, 2.2rem) !important; line-height: 1.15 !important; }
+  h2, .section-title           { font-size: clamp(1.4rem, 6vw, 1.9rem) !important; }
+  h3                           { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
+
+  .hero-subtext,
+  .hero-subtitle,
+  .pp-subtitle                 { font-size: 0.9rem !important; }
+
+  .section-tag                 { font-size: 0.68rem; }
+
+  p                            { font-size: 0.875rem; }
+
+  /* Large numbers in stats */
+  .stat-num,
+  .stat-item-bar .num          { font-size: 1.8rem !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  h1, .hero-title              { font-size: clamp(1.8rem, 6vw, 2.6rem) !important; }
+  h2, .section-title           { font-size: clamp(1.5rem, 5vw, 2rem) !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   2. NAVBAR
+────────────────────────────────────────────────────────────── */
+/* Always show blur bg on mobile since hero is not full-height */
+@media (max-width: 991.98px) {
+  #mainNav {
+    background: rgba(10,11,26,0.95) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 0.7rem 0 !important;
+  }
+
+  .navbar-collapse {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* Larger tap targets for mobile nav links */
+  .navbar-nav .nav-link {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Full-width CTA in mobile menu */
+  .navbar-collapse .btn-kd-primary,
+  .navbar-collapse .btn-kd-ghost {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  /* Hamburger touch area */
+  .navbar-toggler {
+    padding: 0.5rem 0.7rem !important;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .logo-name { font-size: 0.92rem; }
+  .logo-sub  { font-size: 0.56rem; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   3. HERO SECTIONS (all pages)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  /* Homepage hero */
+  #hero {
+    padding-top: 90px !important;
+    padding-bottom: 48px !important;
+    min-height: auto !important;
+    text-align: center;
+  }
+  #hero .hero-actions        { justify-content: center; }
+  #hero .hero-stats          { justify-content: center; }
+  #hero .hero-subtext        { margin-left: auto; margin-right: auto; }
+  #hero .hero-visual         { margin-top: 2.5rem; }
+
+  /* Ambient blobs — reduce size on mobile */
+  #hero::before              { width: 260px; height: 260px; top: 5%; right: -10%; }
+  #hero::after               { width: 180px; height: 180px; }
+}
+
+@media (max-width: 575.98px) {
+  #hero                      { padding-top: 85px !important; }
+  .hero-badge                { font-size: 0.72rem; padding: 0.3rem 0.8rem; }
+  .hero-headline             { margin-bottom: 1rem !important; }
+
+  /* Stack hero CTA buttons vertically */
+  .hero-actions              { flex-direction: column; align-items: center; gap: 0.75rem !important; }
+  .hero-actions a            { width: 100%; max-width: 300px; justify-content: center; }
+
+  /* Compact stats bar */
+  .hero-stats                { gap: 1.5rem !important; padding-top: 1.25rem !important; margin-top: 1.75rem !important; }
+  .stat-num                  { font-size: 1.5rem !important; }
+  .stat-lbl                  { font-size: 0.65rem; }
+
+  /* Hero visual card */
+  .hero-visual               { padding: 1.75rem 1.25rem !important; border-radius: 1rem !important; }
+  .hero-visual-icon          { font-size: 2.5rem !important; }
+  .tech-pills                { gap: 0.35rem !important; }
+  .tech-pill                 { font-size: 0.68rem !important; padding: 0.25rem 0.6rem !important; }
+
+  /* Page heroes (about, services, contact) */
+  #about-hero,
+  #services-hero,
+  #contact-hero,
+  #pp-hero                   { padding-top: 95px !important; padding-bottom: 48px !important; min-height: auto !important; }
+
+  .hero-eyebrow,
+  .pp-eyebrow                { font-size: 0.72rem; padding: 0.28rem 0.8rem; }
+  .service-pills             { gap: 0.4rem !important; }
+  .service-pill              { font-size: 0.72rem !important; padding: 0.32rem 0.8rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   4. SECTIONS — Spacing
+────────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  section { padding: 56px 0 !important; }
+  .container { padding-left: 1.1rem; padding-right: 1.1rem; }
+}
+
+@media (max-width: 575.98px) {
+  section { padding: 48px 0 !important; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
+  .mb-5 { margin-bottom: 2rem !important; }
+  .mt-5 { margin-top: 2rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   5. SERVICE CARDS (homepage + services page)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  /* Always full-width on xs */
+  .service-card,
+  .mv-card,
+  .value-card,
+  .team-card,
+  .info-card,
+  .policy-section            { border-radius: 0.75rem !important; }
+
+  .service-card              { padding: 1.5rem !important; }
+  .svc-icon-wrap,
+  .service-icon-wrap         { width: 52px !important; height: 52px !important; font-size: 1.4rem !important; border-radius: 12px !important; }
+  .svc-number                { font-size: 2.5rem !important; }
+  .svc-title,
+  .service-card-title        { font-size: 1.05rem !important; }
+  .svc-desc,
+  .service-card-desc         { font-size: 0.84rem !important; }
+
+  /* Tags wrap without overflow */
+  .svc-tags,
+  .team-skills               { gap: 0.3rem !important; }
+  .svc-tag,
+  .service-tag,
+  .team-skill                { font-size: 0.65rem !important; padding: 0.18rem 0.55rem !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .service-card              { padding: 1.75rem 1.5rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   6. ABOUT PAGE — Intro visual card
+────────────────────────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  .intro-image-card          { aspect-ratio: 16/9 !important; }
+  .badge-float               { padding: 0.45rem 0.75rem !important; font-size: 0.72rem !important; }
+  .badge-float.badge-tl      { top: 0.75rem !important; left: 0.75rem !important; }
+  .badge-float.badge-br      { bottom: 0.75rem !important; right: 0.75rem !important; }
+}
+
+@media (max-width: 575.98px) {
+  .intro-image-card          { aspect-ratio: 4/3 !important; }
+  .intro-big-icon            { font-size: 3rem !important; }
+  .intro-image-label         { font-size: 0.95rem !important; }
+
+  /* Checklist */
+  .intro-check-list li       { font-size: 0.82rem; }
+  .intro-check-list          { gap: 0.6rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   7. STATS BAR
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  #stats-bar                 { padding: 40px 0 !important; }
+  .stat-item-bar             { padding: 0.75rem !important; }
+  .stat-item-bar .num        { font-size: 1.6rem !important; }
+  .stat-item-bar .lbl        { font-size: 0.65rem !important; }
+  .stat-divider              { display: none !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   8. MISSION & VISION CARDS
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  .mv-card                   { padding: 1.75rem 1.5rem !important; }
+  .mv-icon-wrap              { width: 52px !important; height: 52px !important; font-size: 1.5rem !important; border-radius: 12px !important; }
+  .mv-heading                { font-size: 1.1rem !important; }
+  .mv-desc                   { font-size: 0.83rem !important; }
+  .mv-points li              { font-size: 0.8rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   9. VALUE CARDS
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  .value-card                { padding: 1.5rem !important; }
+  .value-icon                { width: 56px !important; height: 56px !important; font-size: 1.5rem !important; border-radius: 14px !important; margin-bottom: 1rem !important; }
+  .value-title               { font-size: 0.95rem !important; }
+  .value-desc                { font-size: 0.82rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   10. TEAM CARDS
+────────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  /* 2 columns on tablet */
+  #team .col-sm-6            { flex: 0 0 50%; max-width: 50%; }
+}
+
+@media (max-width: 575.98px) {
+  /* 1 column on mobile */
+  #team .col-sm-6            { flex: 0 0 100%; max-width: 100%; }
+
+  .team-card                 { padding: 1.5rem 1.25rem !important; }
+  .team-avatar               { width: 80px !important; height: 80px !important; font-size: 1.8rem !important; }
+  .team-name                 { font-size: 0.95rem !important; }
+  .team-bio                  { font-size: 0.8rem !important; }
+  .team-social-btn           { width: 30px !important; height: 30px !important; font-size: 0.8rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   11. PROCESS STEPS (services page)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  #process                   { padding: 48px 0 !important; }
+
+  /* 2x2 grid on xs */
+  #process .col-6            { flex: 0 0 50% !important; max-width: 50% !important; }
+
+  .process-step              { padding: 1.25rem 0.75rem !important; }
+  .process-step::after       { display: none !important; }
+  .step-number               { width: 48px !important; height: 48px !important; font-size: 0.9rem !important; margin-bottom: 0.9rem !important; }
+  .step-title                { font-size: 0.88rem !important; margin-bottom: 0.35rem !important; }
+  .step-desc                 { font-size: 0.78rem !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .process-step::after       { display: none !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   12. TECH MARQUEE (services page)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  #tech-stack                { padding: 40px 0 !important; }
+  .tech-chip                 { padding: 0.45rem 1rem !important; font-size: 0.78rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   13. CONTACT PAGE — Form & Info
+────────────────────────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  /* Stack info column above form on tablet */
+  #contact-section .col-lg-5,
+  #contact-section .col-lg-7 { width: 100% !important; }
+}
+
+@media (max-width: 767.98px) {
+  .form-panel                { padding: 2rem 1.5rem !important; }
+}
+
+@media (max-width: 575.98px) {
+  .form-panel                { padding: 1.5rem 1.1rem !important; border-radius: 0.85rem !important; }
+  .form-panel-title          { font-size: 1.1rem !important; }
+  .form-panel-sub            { font-size: 0.82rem !important; }
+
+  /* Full-width fields */
+  .kd-input,
+  .kd-select,
+  .kd-textarea               { font-size: 0.875rem !important; padding: 0.75rem 0.9rem !important; }
+  .kd-textarea               { min-height: 120px !important; }
+
+  /* Name/Email row → single column */
+  #contact-form .col-sm-6   { flex: 0 0 100% !important; max-width: 100% !important; }
+
+  /* Input icons */
+  .input-wrapper .kd-input   { padding-left: 2.4rem !important; }
+  .input-icon                { left: 0.75rem !important; }
+  .textarea-icon             { left: 0.75rem !important; }
+
+  /* Info cards */
+  .info-card                 { padding: 1.2rem !important; border-radius: 0.75rem !important; gap: 0.75rem !important; }
+  .info-icon                 { width: 44px !important; height: 44px !important; font-size: 1.15rem !important; border-radius: 10px !important; }
+  .info-label                { font-size: 0.65rem !important; }
+  .info-value                { font-size: 0.85rem !important; }
+
+  /* Availability badge */
+  .availability-badge        { font-size: 0.72rem !important; padding: 0.35rem 0.8rem !important; }
+
+  /* Social chips wrap */
+  .social-grid               { gap: 0.4rem !important; }
+  .social-chip               { font-size: 0.72rem !important; padding: 0.28rem 0.7rem !important; }
+
+  /* Submit button */
+  .btn-submit                { padding: 0.85rem 1.5rem !important; font-size: 0.9rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   14. LOCATION CARD (contact page)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .map-placeholder           { height: 200px !important; }
+  .location-info             { flex-direction: column !important; gap: 1rem !important; padding: 1.25rem !important; align-items: flex-start !important; }
+  .loc-detail span           { font-size: 0.82rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   15. FAQ ACCORDION (contact page)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  .faq-item                  { border-radius: 0.75rem !important; margin-bottom: 0.6rem !important; }
+  .faq-btn                   { font-size: 0.84rem !important; padding: 1rem 1.1rem !important; }
+  .faq-answer                { font-size: 0.82rem !important; padding: 0 1.1rem 1rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   16. CTA BANNER (all pages)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .cta-inner                 { padding: 3.5rem 1.75rem !important; border-radius: 1.1rem !important; }
+  .cta-title                 { font-size: clamp(1.4rem, 5vw, 1.9rem) !important; }
+  .cta-subtitle              { font-size: 0.9rem !important; }
+  .cta-badges                { gap: 0.6rem !important; margin-top: 1.5rem !important; }
+  .cta-badge                 { font-size: 0.72rem !important; padding: 0.3rem 0.8rem !important; }
+}
+
+@media (max-width: 575.98px) {
+  .cta-inner                 { padding: 2.5rem 1.25rem !important; }
+  .cta-title                 { font-size: clamp(1.25rem, 6vw, 1.7rem) !important; }
+  .cta-actions               { flex-direction: column !important; align-items: center !important; gap: 0.75rem !important; }
+  .cta-actions a,
+  .cta-actions button        { width: 100% !important; max-width: 300px !important; justify-content: center !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   17. FOOTER
+────────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  #footer                    { padding-top: 48px !important; }
+  .footer-tagline            { max-width: 100% !important; }
+  .footer-bottom             { flex-direction: column !important; text-align: center !important; gap: 0.75rem !important; }
+  .footer-bottom p:last-child { order: -1; }
+}
+
+@media (max-width: 575.98px) {
+  #footer                    { padding-top: 40px !important; }
+  .footer-logo-name          { font-size: 1rem !important; }
+  .footer-links a            { font-size: 0.82rem !important; }
+  .footer-contact-item       { font-size: 0.82rem !important; }
+  .social-row                { gap: 0.45rem !important; }
+  .social-btn                { width: 32px !important; height: 32px !important; font-size: 0.82rem !important; border-radius: 7px !important; }
+
+  /* Footer columns: 2x2 → 1 column */
+  #footer .col-6             { flex: 0 0 100% !important; max-width: 100% !important; }
+  .footer-heading            { margin-top: 0.5rem; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   18. PRIVACY PAGE
+────────────────────────────────────────────────────────────── */
+@media (max-width: 991.98px) {
+  #toc-card                  { display: none !important; }          /* Hide sidebar TOC */
+  #pp-content .col-lg-9      { width: 100% !important; }
+}
+
+@media (max-width: 575.98px) {
+  #pp-hero                   { padding-top: 95px !important; padding-bottom: 48px !important; }
+  .pp-meta                   { font-size: 0.72rem !important; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+
+  .policy-section            { padding: 1.5rem 1.1rem !important; margin-bottom: 0.75rem !important; }
+  .policy-section h2         { font-size: 1rem !important; }
+  .policy-section p          { font-size: 0.84rem !important; }
+  .policy-section ul li      { font-size: 0.82rem !important; padding: 0.5rem 0.65rem !important; }
+  .policy-num                { width: 34px !important; height: 34px !important; font-size: 0.78rem !important; border-radius: 8px !important; }
+  .policy-section-header     { gap: 0.75rem !important; margin-bottom: 1rem !important; }
+
+  .info-box,
+  .warn-box                  { padding: 0.85rem 1rem !important; border-radius: 0.6rem !important; }
+  .info-box p,
+  .warn-box p                { font-size: 0.82rem !important; }
+
+  .contact-box               { padding: 1.5rem 1.1rem !important; border-radius: 0.85rem !important; grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .contact-box-item .cb-value { font-size: 0.82rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   19. BUTTON TOUCH TARGETS
+────────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .btn-kd-primary,
+  .btn-kd-ghost,
+  .btn-kd-white,
+  .btn-kd-outline            { min-height: 44px; padding-top: 0.7rem !important; padding-bottom: 0.7rem !important; }
+
+  /* Service card "Learn More" links */
+  .svc-cta a,
+  .service-card a            { display: inline-flex; min-height: 40px; align-items: center; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   20. HERO VISUAL FLOAT ANIMATION — Disable on mobile (perf)
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  .float-anim                { animation: none !important; }
+  .badge-float               { animation: none !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   21. GRID FIXES — Bootstrap col overrides
+────────────────────────────────────────────────────────────── */
+/* Services grid: 1 col on mobile */
+@media (max-width: 575.98px) {
+  #services-grid .col-md-6,
+  #services-grid .col-lg-4   { flex: 0 0 100% !important; max-width: 100% !important; }
+}
+
+/* Values grid: 2 col on mobile */
+@media (max-width: 575.98px) {
+  #values .col-sm-6 { flex: 0 0 50% !important; max-width: 50% !important; }
+}
+
+/* Stats bar: 2x2 on mobile */
+@media (max-width: 575.98px) {
+  #stats-bar .col-6          { flex: 0 0 50% !important; max-width: 50% !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   22. MISCELLANEOUS POLISH
+────────────────────────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  /* Consistent border radius on all cards at mobile */
+  [class*="card"],
+  [class*="-card"]           { border-radius: 0.85rem !important; }
+
+  /* Floating dots in hero visual */
+  .floating-dots             { top: 0.6rem !important; right: 0.6rem !important; }
+  .dot                       { width: 7px !important; height: 7px !important; }
+
+  /* Row gutters tighter on mobile */
+  .g-4, .g-5                 { --bs-gutter-x: 1rem !important; --bs-gutter-y: 1rem !important; }
+  .g-3                       { --bs-gutter-x: 0.75rem !important; --bs-gutter-y: 0.75rem !important; }
+
+  /* Section headers */
+  .text-center .section-title { font-size: clamp(1.35rem, 5.5vw, 1.8rem) !important; }
+  .text-center .section-subtitle { font-size: 0.85rem !important; }
+
+  /* Map pin  */
+  .map-pin                   { font-size: 2rem !important; }
+  .map-label                 { font-size: 0.78rem !important; padding: 0.3rem 0.85rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   23. TABLET (md) LAYOUT POLISH
+────────────────────────────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* 2-col service cards */
+  #services-grid .col-lg-4   { flex: 0 0 50%; max-width: 50%; }
+
+  /* 2-col value cards */
+  #values .col-lg-3          { flex: 0 0 50%; max-width: 50%; }
+
+  /* Hero visual */
+  #hero .hero-visual         { padding: 2rem !important; }
+
+  /* About intro text */
+  .intro-check-list li       { font-size: 0.875rem; }
+
+  /* Navbar links a bit smaller */
+  .navbar-nav .nav-link      { padding: 0.4rem 0.7rem !important; font-size: 0.82rem !important; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   24. PRINT (lightweight)
+────────────────────────────────────────────────────────────── */
+@media print {
+  #mainNav,
+  .float-anim,
+  .marquee-track,
+  .social-row,
+  .social-grid,
+  #about-cta,
+  #svc-cta,
+  #contact-cta,
+  #cta                       { display: none !important; }
+
+  body                       { background: #fff !important; color: #111 !important; }
+  .policy-section            { background: #fff !important; border: 1px solid #ddd !important; }
+}

@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════════════════
+   KUMBHANI DIGITAL — REUSABLE COMPONENTS
+   components.css
+════════════════════════════════════════════════════════ */
+
+/* ─── Service Cards ─────────────────────────────────── */
+.service-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: var(--z-below);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow), var(--shadow-lg);
+  border-color: rgba(108, 99, 255, 0.5);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-5);
+  display: block;
+}
+
+.service-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-primary);
+}
+
+.service-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.service-link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary-light);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+.service-link:hover {
+  color: var(--color-accent);
+  gap: var(--space-3);
+}
+
+/* ─── Services Grid ─────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-12);
+}
+
+/* ─── About Grid ────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.about-text {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+.about-list li {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ─── CTA Banner ────────────────────────────────────── */
+.cta-banner {
+  background: var(--gradient-cta);
+  border-radius: var(--radius-xl);
+  margin-inline: var(--container-pad);
+  padding: var(--space-16) var(--space-8);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: rgba(255,255,255,0.05);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+.cta-title {
+  font-size: clamp(var(--font-size-xl), 3.5vw, var(--font-size-3xl));
+  font-weight: var(--fw-extrabold);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.cta-subtitle {
+  font-size: var(--font-size-md);
+  color: rgba(255,255,255,0.8);
+  margin-bottom: var(--space-8);
+}
+
+/* ─── Hero Stats ────────────────────────────────────── */
+.hero-stats {
+  display: flex;
+  gap: var(--space-10);
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--fw-extrabold);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Hero Badge ────────────────────────────────────── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(108, 99, 255, 0.12);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  color: var(--color-primary-light);
+  font-size: var(--font-size-sm);
+  font-weight: var(--fw-medium);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-5);
+}
+
+/* ─── Responsive Components ─────────────────────────── */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-visual { order: -1; }
+  .hero-stats { gap: var(--space-6); }
+}
+
+@media (max-width: 600px) {
+  .cta-banner { margin-inline: 0; border-radius: 0; }
+  .hero-stats { flex-wrap: wrap; gap: var(--space-6); }
+  .services-grid { grid-template-columns: 1fr; }
+}

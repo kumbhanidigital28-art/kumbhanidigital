@@ -1,0 +1,85 @@
+/* ═══════════════════════════════════════════════════════
+   KUMBHANI DIGITAL — PRIVACY PAGE STYLES
+   css/pages/privacy.css
+════════════════════════════════════════════════════════ */
+
+.privacy-section {
+  padding-top: calc(var(--navbar-height) + var(--space-16));
+  padding-bottom: var(--space-24);
+  background: var(--color-bg);
+}
+
+.privacy-container {
+  max-width: 800px;
+}
+
+.privacy-container h1 {
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-3xl));
+  font-weight: var(--fw-extrabold);
+  margin-bottom: var(--space-3);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.privacy-updated {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.privacy-container h2 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+}
+
+.privacy-container p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+}
+
+.privacy-container ul {
+  list-style: disc;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.privacy-container ul li {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.privacy-container strong {
+  color: var(--color-text-primary);
+  font-weight: var(--fw-semibold);
+}
+
+.privacy-container address {
+  font-style: normal;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-top: var(--space-4);
+  line-height: 2;
+}
+
+.privacy-container address a {
+  color: var(--color-primary-light);
+  transition: color var(--transition-fast);
+}
+.privacy-container address a:hover {
+  color: var(--color-accent);
+}
