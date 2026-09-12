@@ -1,0 +1,672 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy of Kumbhani Digital — Learn how we collect, use, and protect your personal information." />
+  <meta name="robots" content="noindex, follow" />
+  <title>Privacy Policy | Kumbhani Digital</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --kd-primary:      #6C63FF;
+      --kd-accent:       #00D4FF;
+      --kd-bg:           #0A0B1A;
+      --kd-bg-alt:       #111228;
+      --kd-card:         #16172E;
+      --kd-border:       rgba(108,99,255,0.2);
+      --kd-text:         #F0F0FF;
+      --kd-muted:        #9898B8;
+      --kd-grad:         linear-gradient(135deg,#6C63FF 0%,#00D4FF 100%);
+      --kd-grad-card:    linear-gradient(145deg,#16172E 0%,#1E1F3A 100%);
+      --kd-ease:         0.28s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--kd-bg);
+      color: var(--kd-text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--kd-primary); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--kd-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--kd-primary); border-radius: 99px; }
+    a { text-decoration: none; }
+
+    /* ── Navbar ── */
+    #mainNav {
+      background: transparent; padding: 1rem 0; z-index: 1050;
+      transition: background var(--kd-ease), box-shadow var(--kd-ease), padding var(--kd-ease);
+    }
+    #mainNav.scrolled {
+      background: rgba(10,11,26,0.9); backdrop-filter: blur(18px);
+      box-shadow: 0 1px 0 var(--kd-border); padding: 0.6rem 0;
+    }
+    .navbar-brand { display: flex; align-items: center; gap: 0.6rem; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-name { font-size: 1rem; font-weight: 700; color: var(--kd-text); }
+    .logo-sub  {
+      font-size: 0.6rem; font-weight: 500; letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: var(--kd-grad);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .navbar-nav .nav-link {
+      color: var(--kd-muted); font-size: 0.875rem; font-weight: 500;
+      padding: 0.4rem 0.9rem; border-radius: 6px;
+      transition: color var(--kd-ease), background var(--kd-ease);
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active { color: var(--kd-text); background: rgba(108,99,255,0.08); }
+    .navbar-toggler { border: 1px solid var(--kd-border); border-radius: 8px; padding: 0.4rem 0.6rem; }
+    .navbar-toggler-icon { filter: invert(1); }
+    .navbar-collapse {
+      background: rgba(17,18,40,0.97); border-radius: 1rem;
+      padding: 1rem 1.25rem; margin-top: 0.5rem; border: 1px solid var(--kd-border);
+    }
+    @media (min-width:992px) {
+      .navbar-collapse { background:transparent; border:none; padding:0; margin-top:0; }
+    }
+    .btn-kd-primary {
+      background: var(--kd-grad); color: #fff; font-weight: 600;
+      border: none; border-radius: 99px; padding: 0.75rem 1.75rem; font-size: 0.9rem;
+      box-shadow: 0 4px 20px rgba(108,99,255,0.4);
+      transition: transform var(--kd-ease), box-shadow var(--kd-ease);
+      display: inline-flex; align-items: center; gap: 0.45rem;
+    }
+    .btn-kd-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(108,99,255,0.6); color: #fff; }
+
+    /* ── Hero ── */
+    #pp-hero {
+      padding-top: 130px; padding-bottom: 72px;
+      background: var(--kd-bg); text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #pp-hero::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 900px; height: 380px;
+      background: radial-gradient(ellipse, rgba(108,99,255,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pp-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.28);
+      color: #A89CFF; font-size: 0.78rem; font-weight: 500;
+      padding: 0.35rem 1rem; border-radius: 99px; margin-bottom: 1.25rem;
+    }
+    .pp-title {
+      font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .text-gradient {
+      background: var(--kd-grad); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .pp-meta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem; color: var(--kd-muted);
+      background: rgba(108,99,255,0.06); border: 1px solid var(--kd-border);
+      padding: 0.4rem 1rem; border-radius: 99px;
+    }
+
+    /* ── TOC Sidebar ── */
+    .toc-card {
+      background: var(--kd-grad-card);
+      border: 1px solid var(--kd-border);
+      border-radius: 1rem; padding: 1.5rem;
+      position: sticky; top: 100px;
+    }
+    .toc-title {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--kd-muted); margin-bottom: 1rem;
+    }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin-bottom: 0.5rem; }
+    .toc-list a {
+      font-size: 0.82rem; color: var(--kd-muted); display: flex;
+      align-items: center; gap: 0.4rem;
+      padding: 0.3rem 0.5rem; border-radius: 6px;
+      transition: all var(--kd-ease);
+    }
+    .toc-list a:hover { color: #A89CFF; background: rgba(108,99,255,0.08); }
+    .toc-list a i { font-size: 0.7rem; opacity: 0.5; }
+    .toc-list a.active { color: var(--kd-primary); background: rgba(108,99,255,0.1); font-weight: 600; }
+
+    /* ── Policy Content ── */
+    #pp-content { padding: 72px 0 96px; background: var(--kd-bg-alt); }
+
+    .policy-section {
+      background: var(--kd-grad-card);
+      border: 1px solid var(--kd-border);
+      border-radius: 1rem; padding: 2.25rem 2rem;
+      margin-bottom: 1.25rem;
+      scroll-margin-top: 100px;
+      transition: border-color var(--kd-ease);
+    }
+    .policy-section:hover { border-color: rgba(108,99,255,0.35); }
+
+    .policy-section-header {
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;
+    }
+    .policy-num {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: var(--kd-grad); color: #fff;
+      font-size: 0.85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; box-shadow: 0 4px 14px rgba(108,99,255,0.35);
+    }
+    .policy-section h2 {
+      font-size: 1.15rem; font-weight: 700; color: var(--kd-text); margin: 0;
+    }
+
+    .policy-section p {
+      font-size: 0.9rem; color: var(--kd-muted); line-height: 1.85; margin-bottom: 1rem;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul {
+      padding-left: 0; margin: 0.75rem 0 1rem; list-style: none;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .policy-section ul li {
+      font-size: 0.875rem; color: var(--kd-muted); line-height: 1.7;
+      display: flex; align-items: flex-start; gap: 0.6rem; padding: 0.6rem 0.75rem;
+      background: rgba(108,99,255,0.05); border-radius: 0.5rem;
+      border-left: 2px solid rgba(108,99,255,0.3);
+    }
+    .policy-section ul li i { color: var(--kd-accent); font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
+    .policy-section ul li strong { color: var(--kd-text); }
+
+    .policy-section a { color: #A89CFF; transition: color var(--kd-ease); }
+    .policy-section a:hover { color: var(--kd-accent); }
+
+    /* Info box */
+    .info-box {
+      background: rgba(0,212,255,0.06); border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 0.75rem; padding: 1rem 1.25rem;
+      display: flex; align-items: flex-start; gap: 0.75rem; margin: 1rem 0;
+    }
+    .info-box i { color: var(--kd-accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .info-box p { font-size: 0.85rem; color: var(--kd-muted); margin: 0; }
+
+    /* Warning box */
+    .warn-box {
+      background: rgba(255,217,61,0.06); border: 1px solid rgba(255,217,61,0.2);
+      border-radius: 0.75rem; padding: 1rem 1.25rem;
+      display: flex; align-items: flex-start; gap: 0.75rem; margin: 1rem 0;
+    }
+    .warn-box i { color: #FFD93D; font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .warn-box p { font-size: 0.85rem; color: var(--kd-muted); margin: 0; }
+
+    /* Contact card inside policy */
+    .contact-box {
+      background: var(--kd-grad);
+      border-radius: 1rem; padding: 2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1.25rem; margin-top: 1rem;
+    }
+    .contact-box-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .contact-box-item i { color: rgba(255,255,255,0.8); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .contact-box-item .cb-label {
+      font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: rgba(255,255,255,0.65); margin-bottom: 0.2rem;
+    }
+    .contact-box-item .cb-value {
+      font-size: 0.875rem; font-weight: 600; color: #fff; line-height: 1.5;
+    }
+    .contact-box-item a { color: rgba(255,255,255,0.9); transition: color var(--kd-ease); }
+    .contact-box-item a:hover { color: #fff; }
+
+    /* ── Footer ── */
+    #footer {
+      background: #080917; border-top: 1px solid var(--kd-border); padding: 48px 0 0;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--kd-border); padding: 1.25rem 0; margin-top: 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: #5E5E88; margin: 0; }
+    .footer-bottom a { color: #5E5E88; transition: color var(--kd-ease); }
+    .footer-bottom a:hover { color: #A89CFF; }
+    .footer-links-mini {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .footer-links-mini a { font-size: 0.8rem; color: #5E5E88; transition: color var(--kd-ease); }
+    .footer-links-mini a:hover { color: #A89CFF; }
+  </style>
+  <!-- Responsive Fixes -->
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" id="nav-logo">
+        <svg width="38" height="38" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="nv-g" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6C63FF"/>
+              <stop offset="100%" stop-color="#00D4FF"/>
+            </linearGradient>
+          </defs>
+          <polygon points="22,2 40,12 40,32 22,42 4,32 4,12" fill="url(#nv-g)"/>
+          <polygon points="22,6 36,14 36,30 22,38 8,30 8,14" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+          <rect x="14" y="14" width="4" height="16" rx="1.5" fill="white"/>
+          <polygon points="18,22 28,14 32,14 22,22" fill="white"/>
+          <polygon points="18,22 32,30 28,30 18,24.5" fill="white"/>
+          <circle cx="32" cy="30" r="2.5" fill="#00D4FF"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">Kumbhani</span>
+          <span class="logo-sub">Digital</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navMenu" aria-controls="navMenu"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-lg-center gap-1 mb-2 mb-lg-0 me-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn-kd-primary">
+          <i class="bi bi-lightning-charge-fill"></i> Get a Free Quote
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="pp-hero">
+    <div class="container">
+      <div class="pp-eyebrow"><i class="bi bi-shield-lock-fill"></i> Legal</div>
+      <h1 class="pp-title">
+        Privacy<br /><span class="text-gradient">Policy</span>
+      </h1>
+      <div class="pp-meta">
+        <i class="bi bi-calendar3"></i> Effective Date: September 2026
+        &nbsp;·&nbsp;
+        <i class="bi bi-building"></i> Kumbhani Digital
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════ -->
+  <section id="pp-content">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Sidebar TOC -->
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="toc-card" id="toc-card">
+            <div class="toc-title"><i class="bi bi-list-ul"></i> Contents</div>
+            <ul class="toc-list" id="toc-list">
+              <li><a href="#section-1"><i class="bi bi-chevron-right"></i> 1. Introduction</a></li>
+              <li><a href="#section-2"><i class="bi bi-chevron-right"></i> 2. Data Collection</a></li>
+              <li><a href="#section-3"><i class="bi bi-chevron-right"></i> 3. Cookies Policy</a></li>
+              <li><a href="#section-4"><i class="bi bi-chevron-right"></i> 4. Data Usage</a></li>
+              <li><a href="#section-5"><i class="bi bi-chevron-right"></i> 5. User Rights</a></li>
+              <li><a href="#section-6"><i class="bi bi-chevron-right"></i> 6. Data Protection</a></li>
+              <li><a href="#section-7"><i class="bi bi-chevron-right"></i> 7. Third-Party Services</a></li>
+              <li><a href="#section-8"><i class="bi bi-chevron-right"></i> 8. Policy Updates</a></li>
+              <li><a href="#section-9"><i class="bi bi-chevron-right"></i> 9. Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Policy Sections -->
+        <div class="col-lg-9">
+
+          <!-- 1. Introduction -->
+          <div class="policy-section" id="section-1">
+            <div class="policy-section-header">
+              <div class="policy-num">01</div>
+              <h2>Introduction</h2>
+            </div>
+            <p>
+              Protecting the privacy of visitors to our website is of utmost importance to us at
+              <strong>Kumbhani Digital</strong>. We are highly dedicated to safeguarding user privacy.
+              The goal of this Privacy Policy is to bring clarity to how we manage the personal information
+              of our website visitors.
+            </p>
+            <p>
+              By agreeing to this Privacy Policy, the user accepts the utilization of cookies according to
+              the terms and conditions stated in this policy. This policy outlines how information is collected,
+              circulated, and utilized in connection with the Kumbhani Digital website and its affiliates.
+            </p>
+            <p>
+              The terms and/or conditions of this Privacy Policy may be changed or modified at any time.
+              Users will be notified about any updates. If a user refuses to accept any changes made to this
+              Privacy Policy, they must immediately stop using the website. Continued use implies consent to
+              the updated terms.
+            </p>
+            <div class="warn-box">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <p>
+                Kumbhani Digital does not hold liability for information collection by any third-party clients,
+                companies, or websites. As our website may include links to other websites, users must be aware
+                that we cannot be held accountable for the privacy policies of those external sites.
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. Data Collection -->
+          <div class="policy-section" id="section-2">
+            <div class="policy-section-header">
+              <div class="policy-num">02</div>
+              <h2>Data Collection</h2>
+            </div>
+            <p>Through the website, we may collect, store, and use the following types of information:</p>
+            <ul>
+              <li><i class="bi bi-dot"></i> Information provided when registering with our website or filling out contact forms — including name, email address, phone number, and any personal information submitted voluntarily</li>
+              <li><i class="bi bi-dot"></i> Information provided when subscribing to email notifications or newsletters</li>
+              <li><i class="bi bi-dot"></i> Information about your computer or device including IP address, browser type, operating system, location, referral source, page views, visit duration, and navigation paths</li>
+              <li><i class="bi bi-dot"></i> Information related to any purchase or transaction made through our website, including name, email, postal address, and payment details</li>
+              <li><i class="bi bi-dot"></i> Information associated with any communication sent through or to our website, including message content and metadata</li>
+              <li><i class="bi bi-dot"></i> Usage data including frequency, timing, and patterns of service use</li>
+            </ul>
+            <div class="info-box">
+              <i class="bi bi-shield-check"></i>
+              <p>
+                <strong style="color:var(--kd-text);">No Information Collected from Children:</strong>
+                Our website is intended for adults only. We do not knowingly gather or store personal information
+                from users under 18 years of age. Parents are advised to review this policy thoroughly.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Cookies Policy -->
+          <div class="policy-section" id="section-3">
+            <div class="policy-section-header">
+              <div class="policy-num">03</div>
+              <h2>Cookies Policy</h2>
+            </div>
+            <p>
+              Kumbhani Digital uses cookies to improve your browsing experience and deliver relevant content.
+              Cookies are small data files created by a web server and stored on your device that help us
+              track usage patterns and recognize return visitors.
+            </p>
+            <p>We use the following tracking technologies:</p>
+            <ul>
+              <li>
+                <i class="bi bi-cookie"></i>
+                <div><strong>Cookies:</strong> Help track online preferences, identify return visitors, and customize your web experience so you don't need to re-enter information on every visit.</div>
+              </li>
+              <li>
+                <i class="bi bi-code-slash"></i>
+                <div><strong>Web Beacons:</strong> Programming code used to track individual visits and online behavioral patterns for service improvement and marketing purposes.</div>
+              </li>
+              <li>
+                <i class="bi bi-globe2"></i>
+                <div><strong>IP Address Tracking:</strong> Used to identify server issues, manage problems, and collect demographic data.</div>
+              </li>
+              <li>
+                <i class="bi bi-file-text"></i>
+                <div><strong>Log Files:</strong> Used to track and monitor member usage patterns across our website.</div>
+              </li>
+            </ul>
+            <p>
+              Third-party advertising companies may also place cookies on your browser when ads are displayed.
+              You can choose to disable cookies in your browser settings; however, some website features may
+              not function correctly as a result.
+            </p>
+          </div>
+
+          <!-- 4. Data Usage -->
+          <div class="policy-section" id="section-4">
+            <div class="policy-section-header">
+              <div class="policy-num">04</div>
+              <h2>Data Usage</h2>
+            </div>
+            <p>
+              Personal information received via our website is used only for specific purposes.
+              We may use your information to:
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle-fill"></i> Manage the website and our business operations</li>
+              <li><i class="bi bi-check-circle-fill"></i> Provide and improve our services to you</li>
+              <li><i class="bi bi-check-circle-fill"></i> Send requested services, invoices, statements, and payment reminders</li>
+              <li><i class="bi bi-check-circle-fill"></i> Respond to enquiries, complaints, and support requests</li>
+              <li><i class="bi bi-check-circle-fill"></i> Send email newsletters or marketing communications that you have specifically requested (you may opt out at any time)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Provide anonymized statistical information to third parties (no individual user can be identified)</li>
+              <li><i class="bi bi-check-circle-fill"></i> Secure and safeguard the website against fraudulent activities</li>
+              <li><i class="bi bi-check-circle-fill"></i> Monitor compliance with our terms and conditions of use</li>
+            </ul>
+            <div class="info-box">
+              <i class="bi bi-info-circle-fill"></i>
+              <p>No personal information will be published to third-party companies for direct marketing purposes without your explicit consent.</p>
+            </div>
+          </div>
+
+          <!-- 5. User Rights -->
+          <div class="policy-section" id="section-5">
+            <div class="policy-section-header">
+              <div class="policy-num">05</div>
+              <h2>User Rights</h2>
+            </div>
+            <p>As a user of our website, you have the following rights regarding your personal information:</p>
+            <ul>
+              <li><i class="bi bi-person-check-fill"></i><div><strong>Access:</strong> You may request a copy of the personal data we hold about you.</div></li>
+              <li><i class="bi bi-pencil-fill"></i><div><strong>Update:</strong> You may request correction of inaccurate or incomplete personal information.</div></li>
+              <li><i class="bi bi-trash3-fill"></i><div><strong>Delete:</strong> You may request deletion of your personal data, subject to legal obligations.</div></li>
+              <li><i class="bi bi-bell-slash-fill"></i><div><strong>Opt-Out:</strong> You may unsubscribe from marketing emails at any time using the unsubscribe link or by contacting us directly.</div></li>
+              <li><i class="bi bi-file-earmark-arrow-down-fill"></i><div><strong>Data Portability:</strong> You may request that your data be provided in a portable format.</div></li>
+              <li><i class="bi bi-slash-circle-fill"></i><div><strong>Restrict Processing:</strong> You may object to or request restriction of how we process your data.</div></li>
+            </ul>
+            <p>To exercise any of these rights, contact us at
+              <a href="mailto:kumbhanidigital28@gmail.com">kumbhanidigital28@gmail.com</a>.
+            </p>
+          </div>
+
+          <!-- 6. Data Protection -->
+          <div class="policy-section" id="section-6">
+            <div class="policy-section-header">
+              <div class="policy-num">06</div>
+              <h2>Data Protection &amp; Security</h2>
+            </div>
+            <p>
+              Kumbhani Digital uses industry-standard guidelines and security measures to protect and
+              safeguard individual data. We implement appropriate technical and organizational measures
+              to prevent misuse, unauthorized alteration, or loss of data.
+            </p>
+            <div class="warn-box">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <p>
+                Users are informed that no storage technique or method of transmitting information over the
+                Internet is completely secure. While we make every effort to protect our users' personal
+                information, we cannot guarantee absolute security. We also do not provide a guarantee that
+                our security measures will stop third-party hackers from unlawfully accessing personal information.
+              </p>
+            </div>
+          </div>
+
+          <!-- 7. Third-Party Services -->
+          <div class="policy-section" id="section-7">
+            <div class="policy-section-header">
+              <div class="policy-num">07</div>
+              <h2>Third-Party Services</h2>
+            </div>
+            <p>We may use trusted third-party services for website analytics, advertising, and communication. These may include:</p>
+            <ul>
+              <li><i class="bi bi-graph-up-arrow"></i><div><strong>Google Analytics</strong> — for tracking website usage and performance.</div></li>
+              <li><i class="bi bi-megaphone-fill"></i><div><strong>Third-party advertising networks</strong> — for displaying relevant advertisements.</div></li>
+              <li><i class="bi bi-credit-card-fill"></i><div><strong>Payment service providers</strong> — for processing financial transactions securely.</div></li>
+              <li><i class="bi bi-envelope-fill"></i><div><strong>Email service providers</strong> — for sending newsletters and notifications.</div></li>
+            </ul>
+            <p>
+              Each of these third-party services operates under their own privacy policies. Kumbhani Digital
+              is not responsible for their data practices. We recommend reviewing the privacy policies of any
+              third-party services you interact with through our website.
+            </p>
+            <p>
+              We may also release user personal information to members of our group of companies, professional
+              advisers, subcontractors, or suppliers, strictly as required for the purposes outlined in this
+              policy or as required by law.
+            </p>
+          </div>
+
+          <!-- 8. Updates -->
+          <div class="policy-section" id="section-8">
+            <div class="policy-section-header">
+              <div class="policy-num">08</div>
+              <h2>Updates to This Policy</h2>
+            </div>
+            <p>
+              We reserve the right to alter or modify any provision of this Privacy Policy at any time.
+              Users are encouraged to regularly check this page for any updates.
+            </p>
+            <p>
+              In the event of any material changes, users will be notified via their registered email address
+              or through a prominent notice on the website. Continued use of the website after changes are
+              made reflects the user's acknowledgement and consent to the updated terms.
+            </p>
+            <p>
+              Unless further changes are made, this policy remains in effect as per the effective date stated above.
+            </p>
+          </div>
+
+          <!-- 9. Contact -->
+          <div class="policy-section" id="section-9">
+            <div class="policy-section-header">
+              <div class="policy-num">09</div>
+              <h2>Contact Information</h2>
+            </div>
+            <p>
+              If you have any questions, concerns, or requests regarding this Privacy Policy or the handling
+              of your personal data, please contact us. We aim to respond to all privacy-related inquiries
+              within <strong style="color:var(--kd-text);">5 business days</strong>.
+            </p>
+
+            <div class="contact-box">
+              <div class="contact-box-item">
+                <i class="bi bi-building"></i>
+                <div>
+                  <div class="cb-label">Company</div>
+                  <div class="cb-value">Kumbhani Digital</div>
+                </div>
+              </div>
+              <div class="contact-box-item">
+                <i class="bi bi-telephone-fill"></i>
+                <div>
+                  <div class="cb-label">Phone / WhatsApp</div>
+                  <div class="cb-value"><a href="tel:+918153845071">+91 81538 45071</a></div>
+                </div>
+              </div>
+              <div class="contact-box-item">
+                <i class="bi bi-envelope-fill"></i>
+                <div>
+                  <div class="cb-label">Email</div>
+                  <div class="cb-value"><a href="mailto:kumbhanidigital28@gmail.com">kumbhanidigital28@gmail.com</a></div>
+                </div>
+              </div>
+              <div class="contact-box-item">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                  <div class="cb-label">Address</div>
+                  <div class="cb-value">
+                    1303, Shivdhara Campus BLDG-D,<br />
+                    N/R Aspayar School, Mota Varachha,<br />
+                    Surat, Gujarat — 394101
+                  </div>
+                </div>
+              </div>
+              <div class="contact-box-item">
+                <i class="bi bi-clock-fill"></i>
+                <div>
+                  <div class="cb-label">Working Hours</div>
+                  <div class="cb-value">Mon – Sat, 9:00 AM – 7:00 PM IST</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /col -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> Kumbhani Digital. All rights reserved.</p>
+        <div class="footer-links-mini">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // Sticky navbar
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    // Active TOC link on scroll
+    const sections = document.querySelectorAll('.policy-section[id]');
+    const tocLinks  = document.querySelectorAll('#toc-list a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 130) current = s.id;
+      });
+      tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+      });
+    }, { passive: true });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const id = link.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        window.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
